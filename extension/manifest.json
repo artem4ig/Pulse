@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Pulse",
+  "description": "Передає в Pulse, що ви слухаєте або дивитесь на YouTube та YouTube Music.",
+  "version": "1.0.0",
+  "host_permissions": ["http://127.0.0.1:48200/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://music.youtube.com/*", "https://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
